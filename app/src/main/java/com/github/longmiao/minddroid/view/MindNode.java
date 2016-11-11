@@ -10,11 +10,8 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import com.github.longmiao.minddroid.R;
 import com.github.longmiao.minddroid.util.ViewUtil;
-
-import org.w3c.dom.Text;
 
 /**
  * Created by 13208 on 2016/11/10.
