@@ -5,9 +5,10 @@
 不过在今后不断完善的过程中，谁又能保证会不会玩出什么新的花样呢？
 
 ##MindDroid 1.0版本支持功能
-*思维导图（右结构图）的基本展示
-*树形结构中节点可以无限制嵌套
-*每个节点支持添加点击事件
+* 思维导图（右结构图）的基本展示
+* 树形结构中节点可以无限制嵌套
+* 每个节点支持添加点击事件
+* 动态向思维导图树种添加节点
 
 ##实现原理
 众所周知，Android展现视图最重要的三个步骤是：measure、layout、draw，其对应的回调函数分别为：onMeasure、onLayout、onDraw。思维
@@ -17,4 +18,4 @@
 的坐标。最后到了绘制的阶段，也就是连接节点和节点那些弯曲的线，这里用到了贝塞尔弧线。
 
 ##截图
-![image](https://github.com/LongMiao/MindDroid/raw/master/screenshots/Screenshot.png)
+![image](https://github.com/LongMiao/MindDroid/raw/master/screenshots/Screenshot.gif)

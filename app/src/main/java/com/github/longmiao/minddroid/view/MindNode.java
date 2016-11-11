@@ -22,6 +22,7 @@ public class MindNode extends FrameLayout{
     private float mTextSize = 12F;
     private String mText = "";
     private boolean mRoundedCorners = false;
+    private NodeType mCurNodeType = NodeType.DEFAULT;
 
     private enum NodeType
     {
@@ -179,8 +180,20 @@ public class MindNode extends FrameLayout{
     }
 
     public void setNodeType(String nodeType) {
-        NodeType type = NodeType.getNodeTypeFromString(nodeType);
-        int bgStyle = mRoundedCorners ? type.getRoundedBg() : type.getDefaultBg();
+        mCurNodeType = NodeType.getNodeTypeFromString(nodeType);
+        int bgStyle = mRoundedCorners ? mCurNodeType.getRoundedBg() : mCurNodeType.getDefaultBg();
         mContainer.setBackgroundResource(bgStyle);
+    }
+
+    public void setNodeText(String text) {
+        mText = text;
+        if(mTv != null) {
+            mTv.setText(text);
+        }
+    }
+
+    public void setRoundedCorners(boolean rounded) {
+        mRoundedCorners = rounded;
+        setNodeType(mCurNodeType.type);
     }
 }

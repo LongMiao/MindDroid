@@ -8,6 +8,7 @@ import android.graphics.Path;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.Toast;
 
 /**
@@ -23,6 +24,8 @@ public class MindNodeGroup extends ViewGroup{
 
     private float mChildNodeWidth = NODE_WIDTH;
     private float mChildNodeHeight = NODE_HEIGHT;
+    private MindNode mShowingNode = null;
+    private int depth = 1;
 
     public MindNodeGroup(Context context) {
         super(context);
@@ -41,14 +44,8 @@ public class MindNodeGroup extends ViewGroup{
 
     private void initialize(AttributeSet attrs) {
         setBackgroundColor(Color.WHITE);
-        MindNode node = new MindNode(getContext(), attrs);
-        addView(node);
-        node.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getContext(), "you lick the node!", Toast.LENGTH_SHORT).show();
-            }
-        });
+        mShowingNode = new MindNode(getContext(), attrs);
+        addView(mShowingNode);
     }
 
     @Override
@@ -71,7 +68,7 @@ public class MindNodeGroup extends ViewGroup{
             width = Math.max(width, child.getMeasuredWidth());
             height += child.getMeasuredHeight();
         }
-        setMeasuredDimension(width + (int)mChildNodeWidth + PADDING_RIGHT + PADDING_LEFT, height == 0?NODE_HEIGHT + PADDING_BOTTOM + PADDING_TOP:height);
+        setMeasuredDimension(width + (int) mChildNodeWidth + PADDING_RIGHT + PADDING_LEFT, height == 0 ? NODE_HEIGHT + PADDING_BOTTOM + PADDING_TOP : height);
     }
 
     @Override
@@ -96,17 +93,12 @@ public class MindNodeGroup extends ViewGroup{
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         Paint paint = new Paint();
-        paint.setColor(Color.GRAY);
-        paint.setStyle(Paint.Style.FILL);
-        paint.setAntiAlias(true);
         int measureHeight = getMeasuredHeight();
         int childCount = getChildCount();
-
-        paint.reset();
         paint.setAntiAlias(true);
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(5f);
-        paint.setColor(Color.GREEN);
+        paint.setColor(Color.BLACK);
         for(int i = 0; i < childCount; i++) {
             View child = getChildAt(i);
             if(child instanceof MindNode) {
@@ -122,5 +114,53 @@ public class MindNodeGroup extends ViewGroup{
             path.cubicTo(nodePointInX + (nodePointOutX - nodePointInX) * 2 / 3, nodePointInY, nodePointInX, nodePointOutY, nodePointOutX, nodePointOutY);
             canvas.drawPath(path, paint);
         }
+    }
+
+    public void addNode(MindNodeGroup child) {
+        addView(child);
+    }
+
+    public MindNode getNode() {
+        return mShowingNode;
+    }
+
+    public int getDepth(boolean compute) {
+        if(!compute) {
+            return depth;
+        }
+        int childCount = getChildCount();
+        for(int i = 0; i < childCount; i++) {
+            View child = getChildAt(i);
+            if(child instanceof MindNodeGroup) {
+                depth = Math.max(depth, depth + ((MindNodeGroup) child).getDepth(compute));
+            }
+        }
+        return depth;
+    }
+
+    /**
+     * 根据导图树的深度逐一添加节点
+     * @param node
+     */
+    public void append(MindNodeGroup node) {
+        MindNodeGroup toAppend = this;
+        int minDepth = depth - 1;
+        int childCount = getChildCount();
+        for(int i = 0; i < childCount; i++) {
+            View child = getChildAt(i);
+            if(child instanceof MindNodeGroup) {
+                int childDepth = ((MindNodeGroup) child).getDepth(false);
+                if(childDepth < minDepth) {
+                    minDepth = childDepth;
+                    toAppend = (MindNodeGroup) child;
+                }
+            }
+        }
+        if(toAppend == this) {
+            toAppend.addNode(node);
+        } else {
+            toAppend.append(node);
+        }
+
     }
 }

@@ -9,12 +9,20 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.github.longmiao.minddroid.util.MindNodeGroupBuilder;
+import com.github.longmiao.minddroid.view.MindNode;
+import com.github.longmiao.minddroid.view.MindNodeGroup;
+
 public class MainActivity extends AppCompatActivity {
+    private MindNodeGroup mRootNodeGroup = null;
+    private MindNodeGroupBuilder mindNodeGroupBuilder = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mRootNodeGroup = (MindNodeGroup) findViewById(R.id.mindnode_root);
+        testNodeClickListener();
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -24,6 +32,20 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+            }
+        });
+    }
+
+    private void testNodeClickListener() {
+        MindNode rootNode = mRootNodeGroup.getNode();
+        mindNodeGroupBuilder = new MindNodeGroupBuilder();
+        rootNode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MindNodeGroup newNode = mindNodeGroupBuilder.buildMindNodeGroup(MainActivity.this).setNodeText("MindDroid New Node").setRounded(true)
+                        .setNodeType("danger").getNodeGroup();
+                mRootNodeGroup.getDepth(true);
+                mRootNodeGroup.append(newNode);
             }
         });
     }
