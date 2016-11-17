@@ -6,6 +6,8 @@
         <attr name="amn_text_alignment" format="string"/>
         <attr name="amn_size" format="string"/>
         <attr name="amn_text_gravity" format="string"/>
+        <attr name="am_lineStrokeWidth" format="dimension"/>
+        <attr name="am_lineColor" format="color"/>
         <attr name="android:textSize"/>
         <attr name="android:text"/>
         <attr name="android:enabled"/>

@@ -8,10 +8,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
+import com.github.longmiao.minddroid.serializer.ISerializer;
+import com.github.longmiao.minddroid.serializer.JsonSerializer;
 import com.github.longmiao.minddroid.util.MindNodeGroupBuilder;
 import com.github.longmiao.minddroid.view.MindNode;
 import com.github.longmiao.minddroid.view.MindNodeGroup;
+
+import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
     private MindNodeGroup mRootNodeGroup = null;
@@ -69,6 +74,11 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
 
+        if (id == R.id.action_jsonSerializer) {
+            ISerializer<JSONObject> serializer = new JsonSerializer();
+            JSONObject Json = serializer.dumps(mRootNodeGroup);
+            Toast.makeText(this, Json.toString(), Toast.LENGTH_SHORT).show();
+        }
         return super.onOptionsItemSelected(item);
     }
 }

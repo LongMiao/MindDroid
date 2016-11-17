@@ -1,6 +1,7 @@
 package com.github.longmiao.minddroid.view;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -10,6 +11,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.Toast;
+
+import com.github.longmiao.minddroid.R;
+
+import org.json.JSONObject;
 
 /**
  * Created by 13208 on 2016/11/10.
@@ -26,6 +31,8 @@ public class MindNodeGroup extends ViewGroup{
     private float mChildNodeHeight = NODE_HEIGHT;
     private MindNode mShowingNode = null;
     private int depth = 1;
+    private float lineStrokeWidth = 5f;
+    private int lineColor = Color.BLACK;
 
     public MindNodeGroup(Context context) {
         super(context);
@@ -43,6 +50,14 @@ public class MindNodeGroup extends ViewGroup{
     }
 
     private void initialize(AttributeSet attrs) {
+        TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.MindNodeDroid);
+        try {
+            lineStrokeWidth = a.getDimension(R.styleable.MindNodeDroid_am_lineStrokeWidth, lineStrokeWidth);
+            lineColor = a.getColor(R.styleable.MindNodeDroid_am_lineColor, lineColor);
+        }
+        finally {
+            a.recycle();
+        }
         setBackgroundColor(Color.WHITE);
         mShowingNode = new MindNode(getContext(), attrs);
         addView(mShowingNode);
@@ -97,8 +112,8 @@ public class MindNodeGroup extends ViewGroup{
         int childCount = getChildCount();
         paint.setAntiAlias(true);
         paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(5f);
-        paint.setColor(Color.BLACK);
+        paint.setStrokeWidth(lineStrokeWidth);
+        paint.setColor(lineColor);
         for(int i = 0; i < childCount; i++) {
             View child = getChildAt(i);
             if(child instanceof MindNode) {
@@ -161,6 +176,5 @@ public class MindNodeGroup extends ViewGroup{
         } else {
             toAppend.append(node);
         }
-
     }
 }

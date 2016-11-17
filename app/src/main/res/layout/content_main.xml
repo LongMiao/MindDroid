@@ -19,6 +19,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="MindDroid Root Node"
+            app:am_lineStrokeWidth="5px"
+            app:am_lineColor="@color/colorPrimaryDark"
             app:amn_roundedCorners="true"
             app:amn_type="success">
 

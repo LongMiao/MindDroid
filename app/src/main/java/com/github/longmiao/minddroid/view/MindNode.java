@@ -192,6 +192,9 @@ public class MindNode extends FrameLayout{
         }
     }
 
+    public String getNodeText() {
+        return mText;
+    }
     public void setRoundedCorners(boolean rounded) {
         mRoundedCorners = rounded;
         setNodeType(mCurNodeType.type);

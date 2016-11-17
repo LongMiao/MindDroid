@@ -2,39 +2,18 @@
 <items version="2" >
 
     <item
-        jar="F:\AndroidStudioProjects\minddroid\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="6d7d803871e3203465f71a163e7af104f807b446">
-        <dex dex="F:\AndroidStudioProjects\minddroid\app\build\intermediates\pre-dexed\debug\classes-1759345e56f10affb56fad23a9ea9056dc30ccb3.jar" />
-    </item>
-    <item
-        jar="F:\AndroidStudioProjects\minddroid\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\jars\libs\internal_impl-24.1.1.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="f78c2f395cb096f9dc1dc07e729922b8fcd3c4f5">
-        <dex dex="F:\AndroidStudioProjects\minddroid\app\build\intermediates\pre-dexed\debug\internal_impl-24.1.1-d9e04de5b92ac1e9d1190408add988ad5d442b57.jar" />
-    </item>
-    <item
-        jar="F:\AndroidStudioProjects\minddroid\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.1.1\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="787871951412550519b0222aba3c9df4cea49875">
-        <dex dex="F:\AndroidStudioProjects\minddroid\app\build\intermediates\pre-dexed\debug\classes-ce6b211a71cc17a993b92f0f7d1329a8917cc496.jar" />
-    </item>
-    <item
-        jar="F:\AndroidStudioProjects\minddroid\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.1.1\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="f62e763609f65e47dc6c498760a4accf02776788">
-        <dex dex="F:\AndroidStudioProjects\minddroid\app\build\intermediates\pre-dexed\debug\classes-3859068c7a5e8f234224ca7cc3d210d52e39c83f.jar" />
-    </item>
-    <item
         jar="F:\AndroidStudioProjects\minddroid\app\build\intermediates\exploded-aar\com.android.support\design\24.1.1\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="e195bd694d5389acfba27ff4fdfa64c4c65b2c05">
         <dex dex="F:\AndroidStudioProjects\minddroid\app\build\intermediates\pre-dexed\debug\classes-bba6807e9c3c25b926db5cdc67656c0b94dc4daf.jar" />
+    </item>
+    <item
+        jar="F:\AndroidStudioProjects\minddroid\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c936c1bd42f0c018c18920c7bec619ef056b24f8">
+        <dex dex="F:\AndroidStudioProjects\minddroid\app\build\intermediates\pre-dexed\debug\classes-2770e7ad7198b15d255a9e0d625caee5a88579db.jar" />
     </item>
     <item
         jar="C:\Users\13208\.gradle\caches\modules-2\files-2.1\com.android.support\support-annotations\24.1.1\3af19f153122737b372622fa6c81dd11a1c6b999\support-annotations-24.1.1.jar"
@@ -44,6 +23,20 @@
         <dex dex="F:\AndroidStudioProjects\minddroid\app\build\intermediates\pre-dexed\debug\support-annotations-24.1.1-747da4878d001433e6c08d8fe588eca29e0db111.jar" />
     </item>
     <item
+        jar="F:\AndroidStudioProjects\minddroid\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\jars\libs\internal_impl-24.1.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="f78c2f395cb096f9dc1dc07e729922b8fcd3c4f5">
+        <dex dex="F:\AndroidStudioProjects\minddroid\app\build\intermediates\pre-dexed\debug\internal_impl-24.1.1-d9e04de5b92ac1e9d1190408add988ad5d442b57.jar" />
+    </item>
+    <item
+        jar="F:\AndroidStudioProjects\minddroid\app\libs\gson-2.2.2.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="53bfcd3c8e310d1493b2691484525ed90b04e236">
+        <dex dex="F:\AndroidStudioProjects\minddroid\app\build\intermediates\pre-dexed\debug\gson-2.2.2-0807712893bdb92d2f67cfd7b651d0478e036ab0.jar" />
+    </item>
+    <item
         jar="F:\AndroidStudioProjects\minddroid\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.1.1\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
@@ -51,11 +44,25 @@
         <dex dex="F:\AndroidStudioProjects\minddroid\app\build\intermediates\pre-dexed\debug\classes-32296a452c74f09d9769d56b6e9fe04b038ff088.jar" />
     </item>
     <item
-        jar="F:\AndroidStudioProjects\minddroid\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.1.1\jars\classes.jar"
+        jar="F:\AndroidStudioProjects\minddroid\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.1.1\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="c936c1bd42f0c018c18920c7bec619ef056b24f8">
-        <dex dex="F:\AndroidStudioProjects\minddroid\app\build\intermediates\pre-dexed\debug\classes-2770e7ad7198b15d255a9e0d625caee5a88579db.jar" />
+        sha1="f62e763609f65e47dc6c498760a4accf02776788">
+        <dex dex="F:\AndroidStudioProjects\minddroid\app\build\intermediates\pre-dexed\debug\classes-3859068c7a5e8f234224ca7cc3d210d52e39c83f.jar" />
+    </item>
+    <item
+        jar="F:\AndroidStudioProjects\minddroid\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="6d7d803871e3203465f71a163e7af104f807b446">
+        <dex dex="F:\AndroidStudioProjects\minddroid\app\build\intermediates\pre-dexed\debug\classes-1759345e56f10affb56fad23a9ea9056dc30ccb3.jar" />
+    </item>
+    <item
+        jar="F:\AndroidStudioProjects\minddroid\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="787871951412550519b0222aba3c9df4cea49875">
+        <dex dex="F:\AndroidStudioProjects\minddroid\app\build\intermediates\pre-dexed\debug\classes-ce6b211a71cc17a993b92f0f7d1329a8917cc496.jar" />
     </item>
 
 </items>
